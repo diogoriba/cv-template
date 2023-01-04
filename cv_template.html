@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CV Template for Game Programmer</title>
+    
+    <!-- Remova esse nodo de style para remover as tooltips -->
+    <style>
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        [data-tooltip]:not([class=profile_photo_frame]) {
+            border: dotted 1px magenta;
+        }
+
+        [data-tooltip] > .profile_photo {
+            border: dotted 1px magenta;
+        }
+
+        [data-tooltip]:before {
+            /* needed - do not touch */
+            content: attr(data-tooltip);
+            position: absolute;
+            display: none;
+            max-width: 50%;
+
+            /* customizable */
+            transition: all 0.15s ease;
+            padding: 10px;
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 2px 2px 1px silver;
+        }
+
+        [data-tooltip]:hover:before {
+            /* needed - do not touch */
+            display: inline-block;
+            animation: fadeIn 0.3s;
+
+            /* customizable */
+            background: #343a40cc;
+            color: white;
+            font-weight: initial;
+            font-size: initial;
+            margin-top: 2em;
+            margin-left: 2em;
+        }
+
+        [data-tooltip]:not([data-tooltip-persistent]):before {
+            pointer-events: none;
+        }
+    </style>
+
+    <style>
+        @page {
+            size: 7in 9.25in;
+            margin: 27mm 16mm 27mm 16mm;
+        }
+
+        body {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin: 2em;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 16px;
+            margin-bottom: 1em;
+        }
+
+        ul {
+            margin-top: 0;
+        }
+
+        .header > div {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .profile_photo {
+            width: 100px;
+            height: 100px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            border: solid 1px black;
+            margin-right: 1em;
+        }
+
+        .body {
+            margin-top: 1em;
+        }
+        .body > div {
+            display: inline-block;
+            vertical-align: top;
+        }
+        .body .left_body {
+            width: 30%;
+            border-right: solid 1px;
+        }
+        .body .left_body > div {
+            margin-right: 0.5em;
+            margin-bottom: 1em;
+        }
+        .body .right_body {
+            max-width: 65%;
+            margin-left: 0.5em;
+        }
+        .experience {
+            margin: 1.5em;
+        }
+        .experience .description {
+            font-size: 12pt;
+        }
+        .strikethrough {
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="profile_photo_frame" data-tooltip="Foto é opcional, mas é bacana!">
+            <img src="profile3.jpg" class="profile_photo" />
+        </div>
+        <div class="header_right">
+            <h1 data-tooltip="Nome completo claro e em evidencia">
+                Diogo Ribeiro
+            </h1>
+            <h2>
+                <span data-tooltip="É totalmente de graça botar pronomes. Não custa nada.">(ele/dele)</span>
+                Programador de Jogos
+            </h2>
+            <div class="contact" data-tooltip="Apenas informação de contato relevante para a vaga. Não coloque links para facebook, instagram, etc, a menos que isso seja relevante para a vaga que você está aplicando">
+                <div><b>Email:</b> fulano@gmail.com</div>
+                <div><b>Telefone:</b> +55 51 99999 9999</div>
+                <div><b>Github:</b> <a href="https://github.com">https://github.com/fulano</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="body">
+        <div class="left_body">
+            <div data-tooltip="Não é necessário listar cursos e certificações de proficiencia. O entrevistador vai verificar isso caso seja necessário.">
+                <b>Idiomas:</b>
+                <ul>
+                    <li>🇧🇷 Português (nativo)</li>
+                    <li>🇺🇸 Inglês (fluente)</li>
+                    <li>🇪🇸 Espanhol (básico)</li>
+                </ul>
+            </div>
+            <div data-tooltip="Se aparecer mais que 5 items aqui, o entrevistador já vai suspeitar. Você **NÃO DOMINA** 15 linguagens de programação.">
+                <b>Tecnologias:</b>
+                <ul>
+                    <li>C#</li>
+                    <li>Javascript</li>
+                    <li>Python</li>
+                </ul>
+            </div>
+            <div data-tooltip="Se você botar EXCEL aqui, eu espero que você consiga fazer doom rodar dentro do excel. Todo mundo sabe mexer no excel.">
+                <b>Ferramentas:</b>
+                <ul>
+                    <li>Unity</li>
+                    <li>SRP/URP</li>
+                    <li>Blender</li>
+                </ul>
+            </div>
+            <div data-tooltip="Coisas que gerem curiosidade no entrevistador. Não precisam ser diretamente relacionadas a vaga.">
+                <b>Outras experiencias:</b> <br/>
+                <ul>
+                    <li>Gerenciamento de Pessoas/Projetos</li>
+                    <li>Arquitetura de Software</li>
+                    <li>Porting para Consoles</li>
+                    <li>Produção de Reality Shows</li>
+                    <li>Tomar os meios de produção</li>
+                </ul>
+            </div>
+        </div>
+        <div class="right_body">
+            <h3 data-tooltip="Não precisa colocar toda a sua vida. Apenas experiencias relevantes para a vaga, e não mais que 5. Seu CV deve ter NO MÁXIMO uma página. Não uma folha. UMA PÁGINA.">Experiencia:</h3>
+            <div class="experience">
+                <h4>Dumativa Game Studio</h4>
+                <div data-tooltip="Sempre começe com o mais recente aqui.">Fev 2019 - presente</div>
+                <div data-tooltip="Se você exerceu mais de um cargo nessa empresa, liste os cargos abaixo. Não é necessário explicitar as datas que você exerceu cada cargo."><b>Diretor de Programação</b></div>
+                <div class="description" data-tooltip="Breve descrição das atividades exercidas. Quando possível inclua nomes de projetos e termos que o entrevistador pode encontrar na internet.">Programação de lógica de jogo, efeitos visuais, e ferramentas para uso interno para Lenda do Herói, Shieldmaiden:Remix, Enigma do Medo. Porting para Nintendo Switch do Lenda do Herói. Gerenciamento de projeto do Enigma do Medo.</div>
+            </div>
+            <div class="experience">
+                <h4>Estúdio Duvidoso LTDA</h4>
+                <div>Jan 2017 - Dez 2018</div>
+                <div><b>Programador</b></div>
+                <div class="description" data-tooltip="Perceba que eu estou listando contatos que eu tive com tecnologias que eu não dominei, mas tive experiencia com.">Produção de um jogo estilo super-trunfo baseado em blockchain onde os jogadores fazem batalhas de figura de macaco. Integração com ChatGPT e API de síntese de voz, de forma que as batalhas eram narradas automaticamente. Representação da empresa em evento internacional.</div>
+            </div>
+            <div class="experience strikethrough" data-tooltip="Não inclua experiencias curtas (3 meses ou menos) e que não colaborem para a vaga que você está aplicando.">
+                <h4>Padaria do Manoel</h4>
+                <div>Nov 2013 - Dez 2013</div>
+                <div><b>Secretário</b></div>
+                <div class="description">Reformulação dos livros-conta utilizando Excel e banco de dados Access. Automação do processo de cobrança de fiado. Otimização da pipeline de uso de farináceos.</div>
+            </div>
+            <h3 data-tooltip="Formação universitária/técnica, cursos e certificações vão aqui. Não é necessário listar educação básica (fundamental/médio) caso tenha curso superior.">Formação:</h3>
+            <div class="experience">
+                <h4>Mestrado em Ciência da Computação - Universidade de Massachussetts</h4>
+                <div>Previsão de término: 2038</div>
+                <div class="description">Tese focada no tema da utilização de modelos de Machine Learning para a produção e planejamento de reality shows.</div>
+            </div>
+            <div class="experience">
+                <h4>Pós Graduação em Produção Audiovisual - Pontifícia Universidade Católica do Rio de Janeiro</h4>
+                <div>Data de conclusão: 2018</div>
+                <div class="description">Entrega de projeto para a TV Record de um reality show similar ao Shark Tank mas apenas para projetos de jogos digitais extremamente questionáveis.</div>
+            </div>
+            <div class="experience">
+                <h4>Certificado de Microsoft Certified Educator - Microsoft</h4>
+                <div>Data de conclusão: 2011</div>
+            </div>
+            <div class="experience">
+                <h4>Bacharelado em Ciência da Computação - Universidade Federal do Rio de Janeiro</h4>
+                <div>Data de conclusão: 2009</div>
+            </div>
+            <div class="experience strikethrough" data-tooltip="É SÉRIO, não incluam tipo: um curso da Udemy, a primeira escolinha, porque isso tem pouquíssimo valor pros entrevistadores.">
+                <h4>Ensino Fundamental - Escolinha Amigos do Verde</h4>
+                <div>Data de conclusão: 1933</div>
+            </div>
+            <h3>Projetos/Portfolio:</h3>
+            <div class="experience">
+                <h4>Cucaracha Terminator</h4>
+                <div>2021</div>
+                <div data-tooltip="Sempre incluam link para o projeto quando ele existir. Digitem o link inteiro caso o currículo esteja sendo lido em papel (sim, isso ainda existe)."><a href="https://havaianas.com.br">https://havaianas.com.br</a></div>
+                <div class="description" data-tooltip="Descreva minimamente o escopo do projeto, e deixe claro qual foi a SUA participação.">Participação voluntária em um jogo em VR de atirar chinelos em baratas. Programei a lógica de movimentação do último boss -- a Abominável Barata Voadora.</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
