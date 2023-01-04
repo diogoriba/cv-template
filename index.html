@@ -39,7 +39,7 @@
             content: attr(data-tooltip);
             position: absolute;
             display: none;
-            max-width: 50%;
+            max-width: 400px;
 
             /* customizable */
             transition: all 0.15s ease;
@@ -72,6 +72,12 @@
         @page {
             size: 7in 9.25in;
             margin: 27mm 16mm 27mm 16mm;
+        }
+
+        @media only screen {
+            body {
+                max-width: 800px;
+            }
         }
 
         body {
@@ -132,6 +138,9 @@
         .experience .description {
             font-size: 12pt;
         }
+        .experience > div:not([class=date]) {
+            margin-left: 1em;
+        }
         .strikethrough {
             text-decoration: line-through;
             color: gray;
@@ -140,6 +149,9 @@
 </head>
 
 <body>
+    Template de CV para vagas de gamedev. Os conselhos são de coração, mas o conteúdo do currículo em si é em sua maior parte mentira e está presente apenas para propósitos educacionais e humorísticos.
+    <hr>
+    <br/>
     <div class="header">
         <div class="profile_photo_frame" data-tooltip="Foto é opcional, mas é bacana!">
             <img src="profile3.jpg" class="profile_photo" />
@@ -155,13 +167,19 @@
             <div class="contact" data-tooltip="Apenas informação de contato relevante para a vaga. Não coloque links para facebook, instagram, etc, a menos que isso seja relevante para a vaga que você está aplicando">
                 <div><b>Email:</b> fulano@gmail.com</div>
                 <div><b>Telefone:</b> +55 51 99999 9999</div>
+                <div class="strikethrough"><b>Instagram:</b><a href="https://instagram.com/fulano">https://instagram.com/fulano</a></div>
                 <div><b>Github:</b> <a href="https://github.com">https://github.com/fulano</a></div>
+                <div class="strikethrough"><b>Tumblr (NSFW):</b><a href="https://ticosepeitos.tumblr.com">https://ticosepeitos.tumblr.com</a></div>
             </div>
         </div>
     </div>
 
     <div class="body">
         <div class="left_body">
+            <div class="strikethrough" data-tooltip="Eu te garanto que independente do que tu ponha aqui, isso só vai te atrapalhar. Teu posicionamento vai transparecer nos teus projetos e na tua conversa com o entrevistador de qualquer maneira, pode omitir no CV.">
+                <b>Posicionamento Político:</b>
+                EXTREMA ESQUERDA AUTORITÁRIA. VCS ACHAM DITADURA RUIM PQ N VIRAM A MINHA AINDA.
+            </div>
             <div data-tooltip="Não é necessário listar cursos e certificações de proficiencia. O entrevistador vai verificar isso caso seja necessário.">
                 <b>Idiomas:</b>
                 <ul>
@@ -176,6 +194,17 @@
                     <li>C#</li>
                     <li>Javascript</li>
                     <li>Python</li>
+                </ul>
+            </div>
+            <div class="strikethrough">
+                <b data-tooltip="Isso pode ser relevante, mas deveria estar vinculado a sua experiencia, e não listado aqui.">Premios:</b>
+                <ul>
+                    <li data-tooltip="Isso aqui deveria estar na parte de PROJETOS na direita e você deveria explicar qual foi sua participação na obtenção desse prêmio.">Best Game na BIG 2016</li>
+                    <div data-tooltip="Literalmente ninguém liga.">
+                    <li>Badge de super-maintainer no github</li>
+                    <li>Score platina no Stackoverflow</li>
+                    <li>Fiz 10 dias consecutivos no Duolingo Japonês</li>
+                    </div>
                 </ul>
             </div>
             <div data-tooltip="Se você botar EXCEL aqui, eu espero que você consiga fazer doom rodar dentro do excel. Todo mundo sabe mexer no excel.">
@@ -198,54 +227,82 @@
             </div>
         </div>
         <div class="right_body">
+            <div data-tooltip="Esse é o lar das frases mais genéricas e insuportáveis do mundo. Parece que a pessoa tá fazendo Visão/Missão de uma empresa MEI. O único objetivo válido é 'Conquistar 18 TERRITÓRIOS e ocupar cada um deles com pelo menos dois exércitos.'">
+                <h3 class="strikethrough">Objetivo:</h3>
+                <div class="experience strikethrough">Ser o programador mais bonito do mundo, e atingir a paz mundial e salvar o meio ambiente através dos meus pull requests no github.</div>
+            </div>
             <h3 data-tooltip="Não precisa colocar toda a sua vida. Apenas experiencias relevantes para a vaga, e não mais que 5. Seu CV deve ter NO MÁXIMO uma página. Não uma folha. UMA PÁGINA.">Experiencia:</h3>
             <div class="experience">
                 <h4>Dumativa Game Studio</h4>
-                <div data-tooltip="Sempre começe com o mais recente aqui.">Fev 2019 - presente</div>
-                <div data-tooltip="Se você exerceu mais de um cargo nessa empresa, liste os cargos abaixo. Não é necessário explicitar as datas que você exerceu cada cargo."><b>Diretor de Programação</b></div>
-                <div class="description" data-tooltip="Breve descrição das atividades exercidas. Quando possível inclua nomes de projetos e termos que o entrevistador pode encontrar na internet.">Programação de lógica de jogo, efeitos visuais, e ferramentas para uso interno para Lenda do Herói, Shieldmaiden:Remix, Enigma do Medo. Porting para Nintendo Switch do Lenda do Herói. Gerenciamento de projeto do Enigma do Medo.</div>
+                <div class="date" data-tooltip="Sempre começe com o mais recente aqui.">Fev 2019 - presente</div>
+                <div data-tooltip="Se você exerceu mais de um cargo nessa empresa, liste os cargos abaixo. Não é necessário explicitar as datas que você exerceu cada cargo."><b>Programador</b></div>
+                <div class="description" data-tooltip="Breve descrição das atividades exercidas. Quando possível inclua nomes de projetos e termos que o entrevistador pode encontrar na internet. Liste apenas o que VOCÊ fez.">Programação de lógica de jogo, efeitos visuais, e ferramentas para uso interno para Lenda do Herói, Shieldmaiden:Remix, Enigma do Medo. Porting para Nintendo Switch do Lenda do Herói. Gerenciamento de projeto do Enigma do Medo.</div>
+                <br/>
+                <div><b>Saco de Pancada</b></div>
+                <div class="description">Alvo de abuso físico e verbal vindo de parte do Bastos e do Bringel. Papel fundamental na diminuição da raiva da equipe e na manutenção da paz e da ordem.</div>
             </div>
             <div class="experience">
                 <h4>Estúdio Duvidoso LTDA</h4>
-                <div>Jan 2017 - Dez 2018</div>
+                <div class="date">Jan 2017 - Dez 2018</div>
                 <div><b>Programador</b></div>
                 <div class="description" data-tooltip="Perceba que eu estou listando contatos que eu tive com tecnologias que eu não dominei, mas tive experiencia com.">Produção de um jogo estilo super-trunfo baseado em blockchain onde os jogadores fazem batalhas de figura de macaco. Integração com ChatGPT e API de síntese de voz, de forma que as batalhas eram narradas automaticamente. Representação da empresa em evento internacional.</div>
             </div>
             <div class="experience strikethrough" data-tooltip="Não inclua experiencias curtas (3 meses ou menos) e que não colaborem para a vaga que você está aplicando.">
                 <h4>Padaria do Manoel</h4>
-                <div>Nov 2013 - Dez 2013</div>
+                <div class="date">Nov 2013 - Dez 2013</div>
                 <div><b>Secretário</b></div>
                 <div class="description">Reformulação dos livros-conta utilizando Excel e banco de dados Access. Automação do processo de cobrança de fiado. Otimização da pipeline de uso de farináceos.</div>
             </div>
             <h3 data-tooltip="Formação universitária/técnica, cursos e certificações vão aqui. Não é necessário listar educação básica (fundamental/médio) caso tenha curso superior.">Formação:</h3>
             <div class="experience">
                 <h4>Mestrado em Ciência da Computação - Universidade de Massachussetts</h4>
-                <div>Previsão de término: 2038</div>
+                <div class="date">Previsão de término: 2038</div>
                 <div class="description">Tese focada no tema da utilização de modelos de Machine Learning para a produção e planejamento de reality shows.</div>
             </div>
             <div class="experience">
                 <h4>Pós Graduação em Produção Audiovisual - Pontifícia Universidade Católica do Rio de Janeiro</h4>
-                <div>Data de conclusão: 2018</div>
+                <div class="date">Data de conclusão: 2018</div>
                 <div class="description">Entrega de projeto para a TV Record de um reality show similar ao Shark Tank mas apenas para projetos de jogos digitais extremamente questionáveis.</div>
             </div>
             <div class="experience">
                 <h4>Certificado de Microsoft Certified Educator - Microsoft</h4>
-                <div>Data de conclusão: 2011</div>
+                <div class="date">Data de conclusão: 2011</div>
+            </div>
+            <div class="experience strikethrough" data-tooltip="Autodidata não é formação acadêmica nem certificação.">
+                <h4>C# - Autodidata</h4>
+                <div class="date">Data de conclusão: 2011</div>
             </div>
             <div class="experience">
                 <h4>Bacharelado em Ciência da Computação - Universidade Federal do Rio de Janeiro</h4>
-                <div>Data de conclusão: 2009</div>
+                <div class="date">Data de conclusão: 2009</div>
             </div>
             <div class="experience strikethrough" data-tooltip="É SÉRIO, não incluam tipo: um curso da Udemy, a primeira escolinha, porque isso tem pouquíssimo valor pros entrevistadores.">
                 <h4>Ensino Fundamental - Escolinha Amigos do Verde</h4>
-                <div>Data de conclusão: 1933</div>
+                <div class="date">Data de conclusão: 1933</div>
             </div>
             <h3>Projetos/Portfolio:</h3>
             <div class="experience">
+                <h4>Mean Look</h4>
+                <div class="date">?????</div>
+                <div><a href="http://www.meanlook.org/pt/">http://www.meanlook.org/pt/</a></div>
+                <div class="description">Blog sobre assuntos relacionados a gamedev com grande dose de humor. Não demonstra batimentos cardíacos ou quaisquer outros sinais de vida.</div>
+            </div>
+            <div class="experience">
                 <h4>Cucaracha Terminator</h4>
-                <div>2021</div>
+                <div class="date">2021</div>
                 <div data-tooltip="Sempre incluam link para o projeto quando ele existir. Digitem o link inteiro caso o currículo esteja sendo lido em papel (sim, isso ainda existe)."><a href="https://havaianas.com.br">https://havaianas.com.br</a></div>
                 <div class="description" data-tooltip="Descreva minimamente o escopo do projeto, e deixe claro qual foi a SUA participação.">Participação voluntária em um jogo em VR de atirar chinelos em baratas. Programei a lógica de movimentação do último boss -- a Abominável Barata Voadora.</div>
+            </div>
+            <div class="experience">
+                <h4 data-tooltip="Se um projeto está sob NDA e você não pode revelar nome/cliente, seja cuidadoso.">Animação de intro para um pequeno estúdio indie</h4>
+                <div class="date">2019</div>
+                <div data-tooltip="Se não há link publico mas você PODE compartilhar (sempre confira o que seu NDA diz), faça upload do seu projeto para uma pasta do Google Drive e compartilhe o link aqui."><a href="https://drive.google.com">https://drive.google.com/blasdkfjasldfjkhsdyf</a></div>
+                <div class="description">Animação de uma luminária de mesa articulada pisando em cima de uma letra I.</div>
+            </div>
+            <div class="experience strikethrough" data-tooltip="Se não é relevante pra vaga, não ponha.">
+                <h4>Mesa de centro com um aquário embutido</h4>
+                <div class="date">2016</div>
+                <div>Carpintaria e resinagem de uma mesa aqui pra casa, que tem um aquário dentro. Ficou linda.</div>
             </div>
         </div>
     </div>
